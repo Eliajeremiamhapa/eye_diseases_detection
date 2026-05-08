@@ -6,8 +6,9 @@
 
 flask
 flask-cors
-tensorflow==2.15.0
+tensorflow-cpu
 numpy
 pillow
 requests
 gunicorn
+h5py
