@@ -1,8 +1,4 @@
-# flask
-# tensorflow-cpu
-# numpy
-# pillow
-# gunicorn
+
 
 flask
 flask-cors
