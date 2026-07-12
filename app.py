@@ -4,7 +4,7 @@ import onnxruntime as ort
 import threading
 import time
 import requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify  # Tumeondoa render_template hapa
 from flask_cors import CORS
 from PIL import Image
 
@@ -41,9 +41,13 @@ def health():
     return "I am awake!", 200
 # --------------------------------------------
 
+# IMEBADILISHWA: Sasa inarudisha JSON safi badala ya kutafuta index.html
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return jsonify({
+        'status': 'success',
+        'message': 'Eye Diseases Detection API ipo hai na tayari kupokea picha kupitia endpoint ya /predict'
+    }), 200
 
 @app.route('/predict', methods=['POST'])
 def predict():
